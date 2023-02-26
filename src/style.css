@@ -1,3 +1,42 @@
-img {
-  max-width: 20px;
+.wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+  font-family: "Quicksand", sans-serif;
+}
+.current-weather-section {
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  border: 0px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.weather-forecast-section {
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  border: 0px;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  display: block;
+  font-size: 13px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  text-align: center;
+  font-size: 9px;
 }
