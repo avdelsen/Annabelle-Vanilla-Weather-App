@@ -44,3 +44,7 @@ footer {
   text-align: center;
   font-size: 9px;
 }
+
+div.description {
+  text-transform: capitalize;
+}
