@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -35,32 +36,70 @@
         <div>Monday 12 October, 2023 12:25</div>
         <div class="current-weather-section">
           <div class="row">
-            <div class="col">
-              <h1>Tilburgo</h1>
+            <div class="col-8 text-center">
+              <h1 id="city">Tilburgo</h1>
               <ul>
-                <li class="humidity">Humidity: 70%</li>
-                <li class="wind">Wind: 11 km/h</li>
-                <li class="rain">Precipitation: 9%</li>
+                <li>Humidity: <span class="humidity" id="humidity"></span>%</li>
+                <li>Wind: <span class="wind" id="wind"></span> km/h</li>
               </ul>
             </div>
-            <div class="col">
+            <div class="col-4 text-center">
               <img
-                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHgA1gMBIgACEQEDEQH/xAAZAAEAAwEBAAAAAAAAAAAAAAAAAQIDBAf/xAAjEAACAgIDAAIDAQEAAAAAAAAAAQIRAyESMUETUSIyYZEE/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APaQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhugDaREZJlMk0ov7OeE2gOy0ScnKV2aQy32BuLopy0ZTk5SpWBpPLGIWRV0HiqOyFFVoBHLbo0sy+KX1RWUJrdgbokyxztUaJp+gSCLQtWBIAAAAAAAAAAAFJOgLWLMHkpllPVoDWyk5GUZSb0JtsDPuVs3iovwyilZ0Y1oCvxkPG0/wBejeJp4BzJSlpaNIYUnfbNAmBEosiEV3RoVXYFqIcU+wLA5suNQ/K9GUX+XZvn/NcY9mEU4yqWmBo2E/TKUrkWf69gbKVrRY5otro1hKwNALAAAAAABDdGGSZtI58rSXlgUkm9l46W0Z4pLltm2SVrqmBMVXRPFemEcnFvZK/6LdAatRj0WjIyyPhHZTHl5Wt2B1uSXpZZDlk2unZV5GqA7eSH9OSM25emznS7A0+Si6kmcTnb7NMcmlYHS2EZfIPloDRwjy5emGfHJxtdolZeT/hpLoDivfWyVfvRu8dOzKWtAXUdFonPGb5UbQYGpKdlWTFAWAAAiySAIZz5IuUqSN2QBz/E0roynKXBpeHVNswlFgckeXbujqwYlJOSfhMMZ0441FJIDklJtcH/AKHjcP1OuWKLIjBIDmqRMV4zp4L6I4L6A5MsnAnHNSjtm+TDyMHh4vQEStdGkJ8VTeyijxTVbM5W3pAdCybIlO2UxYnI3UVHtAUTqOi2PK26bJnG9I5+VN0B1yycezmcvkk9loT52nt/ZWWN49vsC8YU+jeEWjHDJdt9nUl/gEIsgAAAAEEgCrKs0IoDGmRxkuzfiiKAw410bQ6HAtGNASQkSAIoUSAIoo4KzQhgYzgnpCOCPu2bJEgVjGis12aBqwOR8qaXplLA3E7HDZKiBxYU8f8ADWUlkjxff2bvGn2iHiTSrVAcM08bs68GZySTRo8Sa2iYY4x6QFwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEJkhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z"
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
               />
-              <div class="description">Clear</div>
-              <div class="temperature">5°C | F</div>
-              <div class="low-high">low: 2° / high: 11°</div>
+              <div>
+                <span
+                  class="current-temperature"
+                  id="current-temperature"
+                ></span>
+                <span class="current-temperature">°C</span>
+              </div>
+              <div class="description" id="description"></div>
+              <div class="low-high">
+                <span id="current-min-temp"></span> -
+                <span id="current-max-temp"></span>
+              </div>
             </div>
           </div>
         </div>
         <div class="weather-forecast-section">
           <div class="row">
-            <div class="col">2°</div>
-            <div class="col">4°</div>
-            <div class="col">8°</div>
-            <div class="col">11°</div>
-            <div class="col">9°</div>
-            <div class="col">6°</div>
+            <div class="col text-center">
+              <div>Mon</div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              />2°
+            </div>
+            <div class="col text-center">
+              <div>Tue</div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              />4°
+            </div>
+            <div class="col text-center">
+              <div>Wed</div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              />8°
+            </div>
+            <div class="col text-center">
+              <div>Thu</div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              />11°
+            </div>
+            <div class="col text-center">
+              <div>Fri</div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              />9°
+            </div>
+            <div class="col text-center">
+              <div>Sat</div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              />6°
+            </div>
           </div>
         </div>
         <footer>
