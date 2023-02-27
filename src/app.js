@@ -28,8 +28,13 @@ function formattedDate(date) {
   let month = months[now.getMonth()];
   let year = now.getFullYear();
   let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   let minute = now.getMinutes();
-  let timetime = now.getTime();
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
 
   let formattedDate = `${day} ${number} ${month} ${year}, ${hour}:${minute}`;
   return formattedDate;
