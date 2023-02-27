@@ -23,15 +23,20 @@
   <body>
     <div class="container">
       <div class="wrapper">
-        <form>
+        <form id="search-engine">
           <input
             type="text"
             placeholder="Search for a city"
             autocomplete="off"
             autofocus="on"
+            id="searchbar-city"
           />
-          <input type="submit" value="Search" />
-          <input type="submit" value="Current Location" />
+          <input type="submit" value="Search" id="searchbutton-city" />
+          <input
+            type="submit"
+            value="Current Location"
+            id="current-location-button"
+          />
         </form>
         <div id="currentDate"></div>
         <div class="current-weather-section">
