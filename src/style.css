@@ -23,9 +23,26 @@
   font-size: 35px;
   font-weight: 500;
 }
+.date {
+  font-size: 14px;
+}
+.searchbar {
+  border-radius: 5px;
+}
+.search-button {
+  font-weight: 900;
+  background-color: #7069aaa1;
+  border-radius: 5px;
+}
+
+.location-button {
+  background-color: #e7a9227a;
+  border-radius: 5px;
+}
 h1 {
   font-size: 50px;
   font-weight: 700px;
+  margin-top: 15px;
 }
 
 ul {
@@ -35,7 +52,7 @@ ul {
 li {
   list-style: none;
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0;
   padding: 0;
 }

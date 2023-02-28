@@ -29,20 +29,27 @@
             placeholder="Search for a city"
             autocomplete="off"
             autofocus="on"
+            class="searchbar"
             id="searchbar-city"
           />
-          <input type="submit" value="Search" id="searchbutton-city" />
+          <input
+            type="submit"
+            value="Search"
+            class="search-button"
+            id="searchbutton-city"
+          />
           <input
             type="submit"
             value="Current Location"
+            class="location-button"
             id="current-location-button"
           />
         </form>
-        <div id="currentDate"></div>
+        <div class="date" id="currentDate"></div>
         <div class="current-weather-section">
           <div class="row">
             <div class="col-8 text-center">
-              <h1 id="city">Tilburgo</h1>
+              <h1 id="city"></h1>
               <ul>
                 <li>Humidity: <span class="humidity" id="humidity"></span>%</li>
                 <li>Wind: <span class="wind" id="wind"></span> km/h</li>
