@@ -44,23 +44,31 @@ let currentDate = document.querySelector("#currentDate");
 currentDate.innerHTML = formattedDate(now);
 
 function displayCurrentWeatherConditions(response) {
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.temperature.current
-  );
-  document.querySelector("#city").innerHTML = response.data.city;
-  document.querySelector("#current-min-temp").innerHTML = Math.round(
+  let currentTempElement = document.querySelector("#current-temperature");
+  let cityElement = document.querySelector("#city");
+  let currentMinTempElement = document.querySelector("#current-min-temp");
+  let currentMaxTempElement = document.querySelector("#current-max-temp");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let currentIconElement = document.querySelector("#current-icon");
+
+  currentTempElement.innerHTML = Math.round(response.data.temperature.current);
+  cityElement.innerHTML = response.data.city;
+  currentMinTempElement.innerHTML = Math.round(
     response.data.temperature.minimum
   );
-  document.querySelector("#current-max-temp").innerHTML = Math.round(
-    response.data.temperature.miximum
+  currentMaxTempElement.innerHTML = Math.round(
+    response.data.temperature.maximum
   );
-  document.querySelector("#description").innerHTML =
-    response.data.condition.description;
-  document.querySelector("#humidity").innerHTML =
-    response.data.temperature.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  currentIconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  currentIconElement.setAttribute("alt", response.data.condition.description);
 }
 
 let apiKey = "abda35122eo2d00bt2f4d92b2a100fa2";
@@ -86,7 +94,7 @@ function searchLocation(position) {
   let currentLon = position.coords.longitude;
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${currentLon}&lat=${currentLat}&key=${apiKey}`;
   console.log(apiUrl);
-  axios.get(apiUrl).then(displayWeatherConditions);
+  axios.get(apiUrl).then(displayCurrentWeatherConditions);
 }
 function giveCurrentLocation(event) {
   event.preventDefault();
