@@ -39,6 +39,23 @@
   background-color: #e7a9227a;
   border-radius: 5px;
 }
+
+.celcius {
+  text-decoration: none;
+}
+.fahrenheit {
+  text-decoration: none;
+}
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
 h1 {
   font-size: 50px;
   font-weight: 700px;
