@@ -92,7 +92,7 @@ function searchLocation(position) {
   let apiKey = "abda35122eo2d00bt2f4d92b2a100fa2";
   let currentLat = position.coords.latitude;
   let currentLon = position.coords.longitude;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${currentLon}&lat=${currentLat}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${currentLon}&lat=${currentLat}&key=${apiKey}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayCurrentWeatherConditions);
 }
