@@ -42,10 +42,14 @@
 
 .celcius {
   text-decoration: none;
+  color: rgb(94, 94, 126);
 }
+
 .fahrenheit {
   text-decoration: none;
+  color: rgb(94, 94, 126);
 }
+
 .active {
   color: black;
   cursor: default;

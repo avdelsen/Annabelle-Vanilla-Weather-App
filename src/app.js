@@ -46,8 +46,6 @@ currentDate.innerHTML = formattedDate(now);
 function displayCurrentWeatherConditions(response) {
   let currentTempElement = document.querySelector("#current-temperature");
   let cityElement = document.querySelector("#city");
-  let currentMinTempElement = document.querySelector("#current-min-temp");
-  let currentMaxTempElement = document.querySelector("#current-max-temp");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -57,12 +55,6 @@ function displayCurrentWeatherConditions(response) {
 
   currentTempElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
-  currentMinTempElement.innerHTML = Math.round(
-    response.data.temperature.minimum
-  );
-  currentMaxTempElement.innerHTML = Math.round(
-    response.data.temperature.maximum
-  );
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
