@@ -17,6 +17,7 @@
   border-radius: 10px;
   margin: 20px 0;
   padding: 20px;
+  font-size: 13px;
 }
 
 .current-temperature {
@@ -42,12 +43,12 @@
 
 .celcius {
   text-decoration: none;
-  color: rgb(94, 94, 126);
+  color: rgb(109, 109, 120);
 }
 
 .fahrenheit {
   text-decoration: none;
-  color: rgb(94, 94, 126);
+  color: rgb(109, 109, 120);
 }
 
 .active {
@@ -58,6 +59,10 @@
 
 .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast-temperature-min {
+  color: rgb(109, 109, 120);
 }
 
 h1 {
