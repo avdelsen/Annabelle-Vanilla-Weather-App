@@ -43,7 +43,8 @@ let now = new Date();
 let currentDate = document.querySelector("#currentDate");
 currentDate.innerHTML = formattedDate(now);
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastDays = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
   let forecastHTML = `<div class="row">`;
@@ -94,14 +95,17 @@ function displayCurrentWeatherConditions(response) {
 
 let apiKey = "abda35122eo2d00bt2f4d92b2a100fa2";
 let city = "Lisbon";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-
-axios.get(apiUrl).then(displayCurrentWeatherConditions);
+let apiUrlCurrent = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+axios.get(apiUrlCurrent).then(displayCurrentWeatherConditions);
+axios.get(apiUrlForecast).then(displayForecast);
 
 function searchCity(city) {
   let apiKey = "abda35122eo2d00bt2f4d92b2a100fa2";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayCurrentWeatherConditions);
+  let apiUrlCurrent = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios.get(apiUrlCurrent).then(displayCurrentWeatherConditions);
+  axios.get(apiUrlForecast).then(displayForecast);
 }
 
 function retrieveValues(event) {
@@ -151,5 +155,3 @@ let celciusTemperature = null;
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
-
-displayForecast();
