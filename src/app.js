@@ -43,6 +43,33 @@ let now = new Date();
 let currentDate = document.querySelector("#currentDate");
 currentDate.innerHTML = formattedDate(now);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastDays = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastHTML = `<div class="row">`;
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2 text-center">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperature">
+          <span class="weather-forecast-temperature-min">2°</span
+          ><span class="weather-forecast-temperature-max"> 18°</span>
+        </div>
+      </div>
+    `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayCurrentWeatherConditions(response) {
   let currentTempElement = document.querySelector("#current-temperature");
   let cityElement = document.querySelector("#city");
@@ -124,3 +151,5 @@ let celciusTemperature = null;
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
+
+displayForecast();
