@@ -28,13 +28,6 @@
   font-size: 13px;
 }
 
-.current-temperature {
-  font-size: 35px;
-  font-weight: 500;
-}
-.date {
-  font-size: 14px;
-}
 .searchbar {
   border-radius: 5px;
   border-width: 1px;
@@ -50,6 +43,21 @@
   background-color: #ace0d9;
   border-radius: 5px;
   border-width: 1px;
+}
+
+.date {
+  font-size: 12px;
+}
+.current-temperature {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 14px;
+}
+.description:first-letter {
+  text-transform: capitalize;
 }
 
 .celcius {
@@ -69,6 +77,10 @@
 
 .weather-forecast-temperature-min {
   color: rgb(109, 109, 120);
+}
+
+.weather-forecast-date {
+  font-weight: 600;
 }
 
 h1 {
@@ -92,8 +104,4 @@ li {
 footer {
   text-align: center;
   font-size: 9px;
-}
-
-div.description {
-  text-transform: capitalize;
 }
