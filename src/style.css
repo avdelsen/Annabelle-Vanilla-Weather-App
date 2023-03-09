@@ -4,7 +4,11 @@
   font-family: "Quicksand", sans-serif;
 }
 .current-weather-section {
-  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(220, 217, 249) 0%,
+    rgb(172, 224, 217) 89.8%
+  );
   border: 0px;
   border-radius: 10px;
   padding: 20px;
@@ -12,7 +16,11 @@
 }
 
 .weather-forecast-section {
-  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(220, 217, 249) 0%,
+    rgb(172, 224, 217) 89.8%
+  );
   border: 0px;
   border-radius: 10px;
   margin: 20px 0;
@@ -29,26 +37,24 @@
 }
 .searchbar {
   border-radius: 5px;
+  border-width: 1px;
 }
 .search-button {
   font-weight: 900;
   background-color: #7069aaa1;
   border-radius: 5px;
+  border-width: 1px;
 }
 
 .location-button {
-  background-color: #e7a9227a;
+  background-color: #ace0d9;
   border-radius: 5px;
+  border-width: 1px;
 }
 
 .celcius {
   text-decoration: none;
   color: rgb(0, 0, 0);
-}
-
-.fahrenheit {
-  text-decoration: none;
-  color: rgb(109, 109, 120);
 }
 
 .active {
