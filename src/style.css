@@ -78,6 +78,9 @@
 .weather-forecast-temperature-min {
   color: rgb(109, 109, 120);
 }
+.weather-forecast-temperature-max {
+  font-weight: 500;
+}
 
 .weather-forecast-date {
   font-weight: 600;
