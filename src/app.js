@@ -146,28 +146,3 @@ searchEngine.addEventListener("submit", retrieveValues);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", giveCurrentLocation);
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-  let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-function displayCelciusTemperature(event) {
-  event.preventDefault();
-  let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = Math.round(celciusTemperature);
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celciusTemperature = null;
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayCelciusTemperature);
